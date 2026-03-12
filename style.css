@@ -34,14 +34,22 @@ nav {
     display: flex;
     align-items: center;
     position: relative;
-    overflow: hidden; 
     padding: 10px;
     cursor: pointer;
     height: 60px;
+    transition: width 0.4s ease; /* El contenedor se expande suavemente */
+    width: 60px; /* Ancho inicial (solo el logo) */
+    overflow: hidden; 
+}
+
+/* Cuando pasas el mouse, el contenedor se vuelve ancho */
+.logo-container:hover {
+    width: 200px; 
 }
 
 .logo-img {
     height: 50px;
+    min-width: 50px; /* Asegura que el logo no se encoja */
     width: auto !important;
     display: block;
     transition: transform 0.4s ease;
@@ -53,20 +61,14 @@ nav {
     font-weight: 700;
     letter-spacing: 2px;
     position: absolute;
-    left: -100px; 
+    left: 60px; /* Aparece a la derecha del logo */
     transition: all 0.4s ease;
-    z-index: 1; 
     opacity: 0;
     white-space: nowrap;
 }
 
 .logo-container:hover .logo-text {
-    left: 60px; 
     opacity: 1;
-}
-
-.logo-container:hover .logo-img {
-    transform: translateX(-10px);
 }
 
 /* Navegación */
@@ -135,3 +137,4 @@ nav a:hover {
     margin-top: 4rem;
     font-size: 2rem;
 }
+
