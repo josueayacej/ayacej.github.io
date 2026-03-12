@@ -29,29 +29,29 @@ nav {
     margin: 0 auto;
 }
 
-/* Efecto Deslizante del Logo */
+/* Efecto Zoom Logo */
 .logo-link {
     text-decoration: none;
     color: var(--principal);
-    transition: transform 0.3s ease; /* Transición para el zoom */
+    transition: transform 0.3s ease;
     display: inline-block;
 }
 
 .logo-link:hover {
-    transform: scale(1.05); /* Zoom del 5% */
+    transform: scale(1.05);
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espacio fijo entre logo y texto */
+    gap: 15px;
     cursor: pointer;
     height: 60px;
 }
 
 .logo-img {
     height: 50px;
-    width: auto !important;
+    width: auto;
     display: block;
 }
 
@@ -67,6 +67,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 2rem;
+    margin: 0;
 }
 
 nav a {
@@ -128,5 +129,3 @@ nav a:hover {
     margin-top: 4rem;
     font-size: 2rem;
 }
-
-
