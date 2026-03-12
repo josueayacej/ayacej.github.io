@@ -33,7 +33,7 @@ body.dark-mode {
     height: 40px;
     width: 40px;
     object-fit: contain;
-    position: absolute; /* Ambos ocupan el mismo espacio */
+    position: absolute;
     transition: opacity 0.4s ease;
 }
 
@@ -45,19 +45,87 @@ body.dark-mode .logo-dark { opacity: 1; }
 body.dark-mode .logo-light { opacity: 0; }
 
 .logo-text {
-    margin-left: 50px; /* Espacio para que el texto no tape al logo */
+    margin-left: 50px;
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 2px;
 }
 
 /* Navegación y otros elementos */
-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; }
+nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; position: relative; }
 .nav-right { display: flex; align-items: center; gap: 20px; }
-nav ul { list-style: none; display: flex; gap: 2rem; margin: 0; }
+nav ul { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0;}
 nav a { text-decoration: none; color: inherit; font-weight: 500; }
 #theme-toggle { background: none; border: none; cursor: pointer; font-size: 1.2rem; }
 
+/* Botón de menú móvil oculto en escritorio */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: inherit;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Hero Section */
+#hero { padding: 5rem 2rem; text-align: center; }
+#hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+#hero p { font-size: 1.2rem; color: #64748b; }
+body.dark-mode #hero p { color: #94a3b8; }
+
 /* Grid Proyectos */
-.grid-proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
-.card { border: 1px solid #334155; padding: 1rem; background: inherit; }
+.grid-proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; padding: 2rem 2rem 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+.card { border: 1px solid #334155; padding: 1rem; background: inherit; border-radius: 8px; transition: transform 0.3s ease; }
+.card:hover { transform: translateY(-5px); }
+
+/* Cajas grises de muestra para las imágenes */
+.imagen-placeholder { background: #e2e8f0; height: 200px; display: flex; align-items: center; justify-content: center; color: #64748b; font-weight: bold; margin-bottom: 1rem; border-radius: 4px;}
+body.dark-mode .imagen-placeholder { background: #1e293b; color: #94a3b8; }
+
+/* --- REGLAS PARA MÓVILES (Celulares y Tablets pequeñas) --- */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block; 
+    }
+
+    nav ul {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-light);
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 100; 
+    }
+
+    body.dark-mode nav ul {
+        background-color: var(--bg-dark);
+        box-shadow: 0 4px 6px rgba(255,255,255,0.05);
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+
+    nav ul.active {
+        display: flex; /* Se muestra cuando tiene la clase activa */
+    }
+
+    #hero {
+        padding: 3rem 1rem;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    .grid-proyectos { 
+        padding: 2rem 1rem; 
+    }
+}
