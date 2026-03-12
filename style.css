@@ -60,6 +60,7 @@ nav {
     font-weight: 700;
     letter-spacing: 2px;
     white-space: nowrap;
+    color: var(--principal);
 }
 
 /* Navegación */
@@ -129,3 +130,4 @@ nav a:hover {
     margin-top: 4rem;
     font-size: 2rem;
 }
+
