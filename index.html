@@ -34,32 +34,94 @@
 
     <section id="hero">
         <h1>Arquitectura, Construcción y Visualización</h1>
-        <p>Soluciones técnicas y diseño minimalista para proyectos integrales.</p>
+        <p>Soluciones técnicas y diseño funcional para proyectos integrales.</p>
     </section>
 
     <main id="proyectos">
         <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Proyectos Destacados</h2>
         <div class="grid-proyectos">
             
-            <div class="card">
+            <div class="card" ontouchstart="">
                 <div class="imagen-contenedor">
-                    <div id="youtube-player-1" class="youtube-player" data-video-id="_w0oCbSJedQ"></div>
-                    <div class="video-overlay"></div>
+                    <img src="proyecto1-img1.jpg" class="slideshow-img img-1" alt="Proyecto 1">
+                    <img src="proyecto1-img2.jpg" class="slideshow-img img-2" alt="Proyecto 1">
+                    <img src="proyecto1-img3.jpg" class="slideshow-img img-3" alt="Proyecto 1">
+                    <img src="proyecto1-img4.jpg" class="slideshow-img img-4" alt="Proyecto 1">
+                    <img src="proyecto1-gif.gif" class="hover-gif" alt="GIF Proyecto 1">
                 </div>
                 <div class="info">
-                    <h3>Levantamiento Arquitectónico</h3>
-                    <p>Descripción breve del proyecto y herramientas usadas.</p>
+                    <h3>Proyecto Vivienda Digna</h3>
+                    <p>Diseño arquitectónico de vivienda de interes social.</p>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" ontouchstart="">
                 <div class="imagen-contenedor">
-                    <div id="youtube-player-2" class="youtube-player" data-video-id="tgbNymZ7vqY"></div>
-                    <div class="video-overlay"></div>
+                    <img src="proyecto2-img1.jpg" class="slideshow-img img-1" alt="Proyecto 2">
+                    <img src="proyecto2-img2.jpg" class="slideshow-img img-2" alt="Proyecto 2">
+                    <img src="proyecto2-img3.jpg" class="slideshow-img img-3" alt="Proyecto 2">
+                    <img src="proyecto2-img4.jpg" class="slideshow-img img-4" alt="Proyecto 2">
+                    <img src="proyecto2-gif.gif" class="hover-gif" alt="GIF Proyecto 2">
                 </div>
                 <div class="info">
-                    <h3>Diseño de Interiores</h3>
-                    <p>Visualización avanzada y mantenimiento técnico.</p>
+                    <h3>Casa Corregidora129</h3>
+                    <p>Visualización avanzada de espacios y texturas.</p>
+                </div>
+            </div>
+
+            <div class="card" ontouchstart="">
+                <div class="imagen-contenedor">
+                    <img src="proyecto3-img1.jpg" class="slideshow-img img-1" alt="Proyecto 3">
+                    <img src="proyecto3-img2.jpg" class="slideshow-img img-2" alt="Proyecto 3">
+                    <img src="proyecto3-img3.jpg" class="slideshow-img img-3" alt="Proyecto 3">
+                    <img src="proyecto3-img4.jpg" class="slideshow-img img-4" alt="Proyecto 3">
+                    <img src="proyecto3-gif.gif" class="hover-gif" alt="GIF Proyecto 3">
+                </div>
+                <div class="info">
+                    <h3>Diseños Conceptuales</h3>
+                    <p>>Proyectos de investigación arquitectónica, libertad creativa y experimentación formal.</p>
+                </div>
+            </div>
+
+            <div class="card" ontouchstart="">
+                <div class="imagen-contenedor">
+                    <img src="proyecto4-img1.jpg" class="slideshow-img img-1" alt="Proyecto 4">
+                    <img src="proyecto4-img2.jpg" class="slideshow-img img-2" alt="Proyecto 4">
+                    <img src="proyecto4-img3.jpg" class="slideshow-img img-3" alt="Proyecto 4">
+                    <img src="proyecto4-img4.jpg" class="slideshow-img img-4" alt="Proyecto 4">
+                    <img src="proyecto4-gif.gif" class="hover-gif" alt="GIF Proyecto 4">
+                </div>
+                <div class="info">
+                    <h3>Remodelación Residencial</h3>
+                    <p>Optimización de espacios e iluminación natural.</p>
+                </div>
+            </div>
+
+            <div class="card" ontouchstart="">
+                <div class="imagen-contenedor">
+                    <img src="proyecto5-img1.jpg" class="slideshow-img img-1" alt="Proyecto 5">
+                    <img src="proyecto5-img2.jpg" class="slideshow-img img-2" alt="Proyecto 5">
+                    <img src="proyecto5-img3.jpg" class="slideshow-img img-3" alt="Proyecto 5">
+                    <img src="proyecto5-img4.jpg" class="slideshow-img img-4" alt="Proyecto 5">
+                    <img src="proyecto5-gif.gif" class="hover-gif" alt="GIF Proyecto 5">
+                </div>
+                <div class="info">
+                    <h3>Proyecto Paisajismo</h3>
+                    <p>Integración de áreas verdes y recorridos exteriores.</p>
+                </div>
+            </div>
+
+            <div class="card" ontouchstart="">
+                <div class="imagen-contenedor">
+                    <img src="proyecto6-img1.jpg" class="slideshow-img img-1" alt="Proyecto 6">
+                    <img src="proyecto6-img2.jpg" class="slideshow-img img-2" alt="Proyecto 6">
+                    <img src="proyecto6-img3.jpg" class="slideshow-img img-3" alt="Proyecto 6">
+                    <img src="proyecto6-img4.jpg" class="slideshow-img img-4" alt="Proyecto 6">
+                    <img src="proyecto6-gif.gif" class="hover-gif" alt="GIF Proyecto 6">
+                </div>
+                <div class="info">
+                    <h3>Modelado 3D Integral</h3>
+                    <p>Detalles constructivos y recorridos virtuales.</p>
                 </div>
             </div>
 
@@ -93,72 +155,6 @@
                 document.getElementById('nav-links').classList.remove('active');
             });
         });
-
-        // --- 3. LÓGICA DE YOUTUBE API PARA VIDEOS AL HOVER ---
-        
-        // Cargar el script de la API de YouTube asíncronamente
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var ytPlayers = [];
-
-        // Función llamada automáticamente cuando la API de YT está lista
-        function onYouTubeIframeAPIReady() {
-            const playerDivs = document.querySelectorAll('.youtube-player');
-            
-            playerDivs.forEach((div) => {
-                const videoId = div.getAttribute('data-video-id');
-                
-                const player = new YT.Player(div.id, {
-                    videoId: videoId,
-                    playerVars: {
-                        'autoplay': 0,
-                        'controls': 0,      
-                        'disablekb': 1,     
-                        'fs': 0,            
-                        'modestbranding': 1,
-                        'rel': 0,           
-                        'mute': 1,          // Silencio obligatorio para autoplay
-                        'loop': 1,
-                        'playlist': videoId // Necesario para loop en YT
-                    },
-                    events: {
-                        'onReady': onPlayerReady
-                    }
-                });
-                
-                ytPlayers.push({ player: player, card: div.closest('.card') });
-            });
-        }
-
-        // Asignar los eventos cuando cada video termina de cargar
-        function onPlayerReady(event) {
-            ytPlayers.forEach(item => {
-                if (event.target === item.player) {
-                    const overlay = item.card.querySelector('.video-overlay');
-
-                    // PC (Mouse)
-                    overlay.addEventListener('mouseenter', () => {
-                        item.player.playVideo();
-                    });
-
-                    overlay.addEventListener('mouseleave', () => {
-                        item.player.pauseVideo();
-                    });
-
-                    // Móvil (Touch)
-                    overlay.addEventListener('touchstart', () => {
-                        item.player.playVideo();
-                    }, {passive: true});
-
-                    overlay.addEventListener('touchend', () => {
-                        item.player.pauseVideo();
-                    });
-                }
-            });
-        }
     </script>
 </body>
 </html>
