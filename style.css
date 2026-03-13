@@ -1,18 +1,16 @@
 :root {
-    /* --- MODO OSCURO (Fondo principal, sin negro puro) --- */
-    --bg-dark: #121212;     /* Gris muy oscuro para el fondo general */
-    --card-dark: #1E1E1E;   /* Gris ligeramente más claro para dar volumen a las tarjetas */
-    --text-dark: #E2E8F0;   /* Blanco roto para evitar el "halo" y la fatiga visual */
+    /* --- MODO OSCURO (Azules Noche / Midnight Blue) --- */
+    --bg-dark: #0B1120;     /* Azul noche profundísimo, casi negro pero más suave */
+    --card-dark: rgba(30, 41, 59, 0.65); /* Azul pizarra translúcido para el efecto cristal */
+    --text-dark: #CBD5E1;   /* Gris azulado claro para no cansar la vista */
     
-    /* --- COLOR DE ACENTO (Elige solo uno, el Terracota está activo) --- */
-    --acento: #E16036;      /* Opción 1: Terracota / Óxido (Activo) */
-    /* --acento: #38BDF8; */  /* Opción 2: Azul Acero / Planos */
-    /* --acento: #10B981; */  /* Opción 3: Verde / Sustentable */
+    /* --- COLOR DE ACENTO --- */
+    --acento: #38BDF8;      /* Azul cielo brillante/neón para los botones y hover */
 
-    /* --- MODO CLARO (Colores neutros y limpios) --- */
-    --bg-light: #F8FAFC;    /* Gris muy claro, excelente contraste */
-    --card-light: #FFFFFF;  /* Blanco puro para separar las tarjetas del fondo */
-    --text-light: #0F172A;  /* Gris pizarra oscuro para lectura cómoda */
+    /* --- MODO CLARO (Azules Glaciares / Celestes) --- */
+    --bg-light: #F0F9FF;    /* Blanco azulado muy fresco y limpio */
+    --card-light: rgba(255, 255, 255, 0.7); /* Blanco translúcido para el efecto cristal */
+    --text-light: #0F172A;  /* Azul marino muy oscuro para máximo contraste de lectura */
 }
 
 /* --- 1. ESTILOS BASE --- */
@@ -25,7 +23,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Tipografía de prestigio para los encabezados */
 h1, h2, h3, .logo-text {
     font-family: 'Playfair Display', serif;
     font-weight: 600;
@@ -61,20 +58,20 @@ body.light-mode .logo-light { opacity: 1; }
 .logo-link { text-decoration: none; color: inherit; }
 .logo-text { margin-left: 50px; font-size: 1.4rem; letter-spacing: 3px; }
 
-/* Header con efecto "Glassmorphism" sutil */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(18, 18, 18, 0.85);
+    background: rgba(11, 17, 32, 0.8);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 body.light-mode header {
-    background: rgba(248, 250, 252, 0.85);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: rgba(240, 249, 255, 0.8);
+    border-bottom: 1px solid rgba(2, 132, 199, 0.1);
 }
 
 nav { 
@@ -91,7 +88,6 @@ nav ul { list-style: none; display: flex; align-items: center; gap: 2rem; margin
 nav a { text-decoration: none; color: inherit; font-weight: 400; font-size: 0.95rem; transition: color 0.3s ease; letter-spacing: 0.5px;}
 nav a:hover { color: var(--acento); }
 
-/* Botón de Contacto en la navegación */
 .btn-outline-nav {
     border: 1px solid var(--acento);
     padding: 0.5rem 1.2rem;
@@ -101,10 +97,16 @@ nav a:hover { color: var(--acento); }
 
 .btn-outline-nav:hover {
     background-color: var(--acento);
-    color: #121212 !important; /* Texto oscuro sobre botón de color */
+    color: #0B1120 !important; 
+}
+
+body.light-mode .btn-outline-nav {
+    color: #0284C7 !important; /* Azul más oscuro para el botón en modo claro */
+    border-color: #0284C7;
 }
 
 body.light-mode .btn-outline-nav:hover {
+    background-color: #0284C7;
     color: #FFFFFF !important;
 }
 
@@ -122,9 +124,8 @@ body.light-mode .btn-outline-nav:hover {
 
 #hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; }
 #hero p { font-size: 1.2rem; color: #94A3B8; margin-bottom: 2.5rem; font-weight: 300;} 
-body.light-mode #hero p { color: #475569; }
+body.light-mode #hero p { color: #334155; }
 
-/* Llamados a la Acción (Botones) */
 .hero-ctas { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 .btn-primary, .btn-secondary {
     padding: 0.8rem 2rem;
@@ -136,48 +137,55 @@ body.light-mode #hero p { color: #475569; }
     letter-spacing: 1px;
 }
 
-.btn-primary { background-color: var(--acento); color: #121212; border: 1px solid var(--acento); }
+.btn-primary { background-color: var(--acento); color: #0B1120; border: 1px solid var(--acento); }
 .btn-primary:hover { background-color: transparent; color: var(--acento); }
 
+body.light-mode .btn-primary { background-color: #0284C7; color: #FFFFFF; border-color: #0284C7; }
+body.light-mode .btn-primary:hover { background-color: transparent; color: #0284C7; }
+
 .btn-secondary { background-color: transparent; color: var(--text-dark); border: 1px solid rgba(255,255,255,0.2); }
-.btn-secondary:hover { border-color: var(--text-dark); }
+.btn-secondary:hover { border-color: var(--text-dark); background-color: rgba(255,255,255,0.05); }
 
-body.light-mode .btn-secondary { color: var(--text-light); border: 1px solid rgba(0,0,0,0.2); }
-body.light-mode .btn-secondary:hover { border-color: var(--text-light); }
+body.light-mode .btn-secondary { color: var(--text-light); border: 1px solid rgba(15,23,42,0.2); }
+body.light-mode .btn-secondary:hover { border-color: var(--text-light); background-color: rgba(15,23,42,0.05); }
 
-/* --- 4. TARJETAS DE PROYECTOS --- */
+/* --- 4. TARJETAS DE PROYECTOS (CON EFECTO DIFUMINADO) --- */
 .section-title { text-align: center; margin-bottom: 4rem; font-size: 2.5rem; }
 .grid-proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; padding: 0 2rem 4rem 2rem; max-width: 1200px; margin: 0 auto; }
 
 .card { 
     background: var(--card-dark); 
+    /* El truco del difuminado / Glassmorphism */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    
     border-radius: 8px; 
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4); 
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease, border-color 0.4s ease; 
-    border: 1px solid rgba(255,255,255,0.05); /* Borde sutil por defecto */
+    border: 1px solid rgba(255,255,255,0.08); 
     cursor: pointer;
 }
 
 .card:hover { 
     transform: translateY(-10px); 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
-    border-color: var(--acento); /* Brilla con el color de acento al pasar el mouse */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(56, 189, 248, 0.15); 
+    border-color: var(--acento); 
 }
 
 body.light-mode .card { 
     background: var(--card-light); 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-    border: 1px solid rgba(0,0,0,0.05); 
+    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.08); 
+    border: 1px solid rgba(255,255,255,0.5); 
 }
 
 body.light-mode .card:hover { 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12); 
-    border-color: var(--acento); 
+    box-shadow: 0 20px 40px rgba(2, 132, 199, 0.15); 
+    border-color: #0284C7; 
 }
 
 /* --- 5. GALERÍA DE IMÁGENES Y VIDEO --- */
-.imagen-contenedor { width: 100%; height: 280px; overflow: hidden; background-color: #000; position: relative; }
+.imagen-contenedor { width: 100%; height: 280px; overflow: hidden; background-color: #060913; position: relative; }
 .slideshow-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: crossfade 16s infinite; transition: opacity 0.5s ease; }
 
 .img-1 { animation-delay: 0s; } 
@@ -201,13 +209,13 @@ body.light-mode .card:hover {
 }
 
 .card:hover .slideshow-img { opacity: 0; }
-.card:hover .hover-video { opacity: 1; transform: scale(1); } /* Efecto de inmersión */
+.card:hover .hover-video { opacity: 1; transform: scale(1); } 
 
 /* --- 6. TEXTOS DE LA TARJETA --- */
 .info { padding: 1.8rem; }
 .info h3 { margin: 0 0 0.8rem 0; font-size: 1.4rem; letter-spacing: 0.5px; }
 .info p { margin: 0; color: #94A3B8; font-size: 0.95rem; line-height: 1.6; font-weight: 300; }
-body.light-mode .info p { color: #475569; }
+body.light-mode .info p { color: #334155; }
 
 /* --- 7. SECCIÓN SOBRE EL ESTUDIO & FOOTER --- */
 .about-container { 
@@ -218,25 +226,26 @@ body.light-mode .info p { color: #475569; }
     border-top: 1px solid rgba(255, 255, 255, 0.05); 
 }
 
-body.light-mode .about-container { border-top: 1px solid rgba(0, 0, 0, 0.05); }
+body.light-mode .about-container { border-top: 1px solid rgba(2, 132, 199, 0.1); }
 
 .about-container h2 { font-size: 2.2rem; margin-bottom: 1.5rem; }
 .about-container p { font-size: 1.1rem; line-height: 1.8; color: #94A3B8; font-weight: 300; }
-body.light-mode .about-container p { color: #475569; }
+body.light-mode .about-container p { color: #334155; }
 
 footer { 
-    background-color: #0A0A0A; /* Ligeramente más oscuro que el fondo para delimitar */
+    background-color: #060913; 
     padding: 3rem 1rem; 
     border-top: 1px solid rgba(255,255,255,0.05); 
 }
 
 body.light-mode footer { 
-    background-color: #F1F5F9; 
-    border-top: 1px solid rgba(0,0,0,0.05); 
+    background-color: #E0F2FE; 
+    border-top: 1px solid rgba(255,255,255,0.5); 
 }
 
 .footer-content { text-align: center; color: #64748B; }
 .footer-content h3 { color: var(--acento); margin-bottom: 0.5rem; letter-spacing: 2px; }
+body.light-mode .footer-content h3 { color: #0284C7; }
 .copyright { font-size: 0.85rem; margin-top: 2rem; opacity: 0.6; }
 
 /* --- 8. ANIMACIONES DE INTERFAZ (Scroll Fade) --- */
@@ -252,7 +261,6 @@ body.light-mode footer {
 @media (max-width: 768px) {
     .mobile-menu-btn { display: block; }
     
-    /* Menú lateral que entra desde la derecha */
     nav ul {
         display: flex; 
         flex-direction: column;
@@ -262,12 +270,15 @@ body.light-mode footer {
         left: 100%; 
         width: 100%; 
         height: 100vh;
-        background-color: var(--bg-dark);
+        /* Menú móvil también con efecto cristal */
+        background-color: rgba(11, 17, 32, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         z-index: -1; 
     }
     
-    body.light-mode nav ul { background-color: var(--bg-light); }
+    body.light-mode nav ul { background-color: rgba(240, 249, 255, 0.95); }
     nav ul.active { left: 0; }
     nav ul li { margin: 1.5rem 0; font-size: 1.5rem; }
     
